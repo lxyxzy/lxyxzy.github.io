@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李新月 | 作品集</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -44,7 +49,7 @@
             justify-content: center;
             gap: 36px;
             padding: 14px 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
         nav a {
@@ -55,7 +60,9 @@
             transition: color 0.2s;
         }
 
-        nav a:hover { color: #2d3436; }
+        nav a:hover {
+            color: #2d3436;
+        }
 
         section {
             max-width: 960px;
@@ -80,7 +87,7 @@
             background: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
         .pdf-viewer iframe,
@@ -101,19 +108,20 @@
             background: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .video-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
         }
 
-        .video-card video {
+        .video-card iframe {
             width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
             display: block;
-            background: #000;
         }
 
         .video-card .video-label {
@@ -131,79 +139,89 @@
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            nav { gap: 20px; }
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
             .pdf-viewer iframe,
-            .pdf-viewer embed { height: 450px; }
-            .video-grid { grid-template-columns: 1fr; }
+            .pdf-viewer embed {
+                height: 450px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>李新月</h1>
-    <p>作品集</p>
-</header>
+    <header>
+        <h1>李新月</h1>
+        <p>作品集</p>
+    </header>
 
-<nav>
-    <a href="#portfolio">PDF 作品集</a>
-    <a href="#videos">视频作品</a>
-</nav>
+    <nav>
+        <a href="#portfolio">PDF 作品集</a>
+        <a href="#videos">视频作品</a>
+    </nav>
 
-<section id="portfolio">
-    <h2 class="section-title">PDF 作品集</h2>
-    <p class="section-desc">浏览完整作品集文档</p>
-    <div class="pdf-viewer">
-        <iframe src="李新月作品集.pdf" title="李新月作品集"></iframe>
-    </div>
-</section>
+    <section id="portfolio">
+        <h2 class="section-title">PDF 作品集</h2>
+        <p class="section-desc">浏览完整作品集文档</p>
+        <div class="pdf-viewer">
+            <iframe src="program.pdf" title="李新月作品集" loading="lazy"></iframe>
+        </div>
+    </section>
 
-<section id="videos">
-    <h2 class="section-title">视频作品</h2>
-    <p class="section-desc">点击播放查看视频作品</p>
-    <div class="video-grid">
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="video-1.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
-            <div class="video-label">视频作品 1</div>
+    <section id="videos">
+        <h2 class="section-title">视频作品</h2>
+        <p class="section-desc">点击播放查看视频作品</p>
+        <div class="video-grid">
+            <!-- 替换下面的 BV 号为你在 B站上传视频后获得的 BV 号 -->
+            <!-- 例如：视频链接是 bilibili.com/video/BV1xx411c7mD，则 BV 号是 BV1xx411c7mD -->
+            <div class="video-card">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=116697331732393&bvid=BV1DT7k6JE89&cid=38883428823&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="video-label">视频作品 1</div>
+            </div>
+            <div class="video-card">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=116697331666402&bvid=BV18T7k6JEQu&cid=38883495443&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="video-label">视频作品 2</div>
+            </div>
+            <div class="video-card">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=116697348441635&bvid=BV1pW7k6BErZ&cid=38883558162&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="video-label">视频作品 3</div>
+            </div>
+            <div class="video-card">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=116697348442187&bvid=BV1pW7k6BEGr&cid=38883559429&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="video-label">视频作品 4</div>
+            </div>
+            <div class="video-card">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=116697348443497&bvid=BV1pW7k6BEFw&cid=38883560368&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="video-label">视频作品 5</div>
+            </div>
         </div>
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="video-2.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
-            <div class="video-label">视频作品 2</div>
-        </div>
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="video-3.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
-            <div class="video-label">视频作品 3</div>
-        </div>
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="video-4.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
-            <div class="video-label">视频作品 4</div>
-        </div>
-        <div class="video-card">
-            <video controls preload="metadata">
-                <source src="video-5.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
-            <div class="video-label">视频作品 5</div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    &copy; 李新月 | 作品集
-</footer>
+    <footer>
+        &copy; 李新月 | 作品集
+    </footer>
 
 </body>
+
 </html>
